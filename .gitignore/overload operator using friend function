@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+class A
+{
+    int a,b;
+    
+    public:
+        void setData(int x,int y)
+        {
+            a=x;
+            b=y;
+        }
+        
+        void showData()
+        {
+            cout<<"a="<<a<<"b="<<b<<endl;
+        }
+        
+        friend A operator+(A,A);
+};
+        A operator+(A x,A y)
+        {
+            A temp;
+            temp.a=x.a+y.a;
+            temp.b=x.b+y.b;
+            return(temp);
+        }
+
+        int main()
+        {
+            A a1,a2,a3;
+            a1.setData(3,4);
+            a2.setData(5,6);
+            
+            a3=a1+a2;
+            
+            a3.showData();
+            
+            return 0;
+        }
+**********************************
+output:-
+a=8b=10 
