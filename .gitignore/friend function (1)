@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+class complex
+{
+    int a,b;
+    
+    public:
+        void setData(int x,int y)
+        {
+            a=x;
+            b=y;
+        }
+        
+        friend void fun(complex);
+};
+
+        void fun(complex c)
+        {
+            cout<<"sum is="<<c.a+c.b<<endl;
+        }
+int main()
+{
+    complex c1,c2,c3;
+    c1.setData(3,4);
+    c2.setData(5,6);
+    c3.setData(7,8);
+    
+    fun(c1);
+    fun(c2);
+    fun(c3);
+}
+***********************************
+output:-
+
+sum is=7                                                                                                                       
+sum is=11                                                                                                                      
+sum is=15  
